@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import module
 import { ElModule } from 'element-angular'
 import 'element-angular/theme/index.css'
+
 // import {MatCardModule} from '@angular/material/card';
 
 import { ProduseComponent } from './produse/produse.component';
