@@ -10,13 +10,13 @@ export class StatusService {
   constructor(private http: HttpClient) { }
 
   // Get the status
-  getStatus(): Promise<void | any> {
-    return this.http.get(this.statusUrl)
-               .toPromise()
-               .then(response => response.json())
-              //  .then(response => console.log('raspuns',response))
-               .catch(this.error);
-  }
+  // getStatus(): Promise<void | any> {
+  //   return this.http.get(this.statusUrl)
+  //              .toPromise()
+  //              .then(response => response.json())
+  //             //  .then(response => console.log('raspuns',response))
+  //              .catch(this.error);
+  // }
 
   // Error handling
   private error (error: any) {

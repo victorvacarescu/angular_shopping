@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./base-page.component.css']
 })
 export class BasePageComponent implements OnInit {
-  title = 'Shopping Cart';
-  produseCos = [];
-  total = 0;
-  totalArray = [];
+  title             = 'Shopping Cart';
+  produseCos        = [];
+  total             = 0;
+  totalFaraTva      = 0;
+  valoareTva        = 0;
+  totalArray        = [];
   totalProduseArray = [];
-  totalProduse = 0;
+  totalProduse      = 0;
 
   constructor() { }
 
@@ -38,14 +40,17 @@ export class BasePageComponent implements OnInit {
   }
 
   setTotalProduse(){
-    this.total = 0;
+    this.total        = 0;
     this.totalProduse = 0;
+
     if(this.produseCos.length > 0){
       this.produseCos.forEach(p => {
         this.totalArray.push(p.pret);
       })
       this.totalProduse = this.produseCos.length;
-      this.total = this.totalArray.reduce((a, b) => a + b, 0)
+      this.total        = this.totalArray.reduce((a, b) => a + b, 0)
+      this.totalFaraTva = this.total / 1.19;
+      this.valoareTva   = this.total - this.totalFaraTva;
     }   
   }
 

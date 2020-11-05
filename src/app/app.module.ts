@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import module
 import { ElModule } from 'element-angular'
 import 'element-angular/theme/index.css'
-import {MatCardModule} from '@angular/material/card';
+// import {MatCardModule} from '@angular/material/card';
 
 import { ProduseComponent } from './produse/produse.component';
 import { CosCumparaturiComponent } from './cos-cumparaturi/cos-cumparaturi.component';
@@ -19,7 +19,7 @@ import { BasePageComponent } from './base-page/base-page.component';
  
 
 @NgModule({  
-  declarations: [  
+  declarations: [ 
     AppComponent,
     ProduseComponent,
     CosCumparaturiComponent,
@@ -33,7 +33,7 @@ import { BasePageComponent } from './base-page/base-page.component';
     FormsModule,
     BrowserAnimationsModule,
     ElModule.forRoot(),
-    MatCardModule
+    // MatCardModule
     
   ],
   providers: [],

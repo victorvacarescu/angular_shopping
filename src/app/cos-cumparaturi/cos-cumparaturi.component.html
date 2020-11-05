@@ -4,7 +4,8 @@
         <div class="clearfix">
         <el-badge [model]="totalProduse" class="item">
             <el-button [elDisabled]='items.length == 0' style="float: right;" type="primary" (click)="toPayment(total)">Plateste: {{total}} lei </el-button>
-        </el-badge>      
+        </el-badge>
+        Total fara TVA: {{totalFaraTva}} | Valoare TVA: {{valoareTva}}
         
         </div>
     </ng-template>

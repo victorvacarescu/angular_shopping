@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { ProduseComponent } from './produse/produse.component';
-import { parse } from 'path'; 
-import { RouterOutlet } from '@angular/router';
-import { StatusService } from './shared/status.service';
-import { HttpClient } from '@angular/common/http';
+// import { ProduseComponent } from './produse/produse.component';
+// import { parse } from 'path'; 
+// import { RouterOutlet } from '@angular/router';
+// import { StatusService } from './shared/status.service';
+// import { HttpClient } from '@angular/common/http';
 
 // var cors = require('cors'); 
 // const test = 1;
@@ -11,13 +11,13 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-})
+}) 
 export class AppComponent {
   
   
   status = 'DOWN';
   
-
+ 
   ngOnInit(){
     
   }  

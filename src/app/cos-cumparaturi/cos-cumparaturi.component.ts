@@ -8,9 +8,11 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class CosCumparaturiComponent implements OnInit {
 
-  @Input() items =[];
-  @Input() total = 0;
+  @Input() items        =[];
+  @Input() total        = 0;
   @Input() totalProduse = 0;
+  @Input() valoareTva   = 0;
+  @Input() totalFaraTva = 0;
 
   @Output()
   delete: EventEmitter<any> = new EventEmitter();

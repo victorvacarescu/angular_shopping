@@ -9,6 +9,6 @@
       <app-produse (open)="onSelect($event)"></app-produse> 
     </div>
     <div el-col span="6">
-      <app-cos-cumparaturi [items]="produseCos" [total]="total" [totalProduse]="totalProduse" (delete)="onDelete($event)"></app-cos-cumparaturi>
+      <app-cos-cumparaturi [items]="produseCos" [total]="total" [totalProduse]="totalProduse" [valoareTva]="valoareTva" [totalFaraTva]="totalFaraTva" (delete)="onDelete($event)"></app-cos-cumparaturi>
     </div>
   </div>
