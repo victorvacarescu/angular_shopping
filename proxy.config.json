@@ -1,0 +1,10 @@
+
+
+{
+    "/api/*": {
+        "target": "http://angular-shopping-cart.menut.ro/index.php",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

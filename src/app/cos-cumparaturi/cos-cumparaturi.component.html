@@ -1,0 +1,27 @@
+
+<el-card class="box-card">
+    <ng-template #header>
+        <div class="clearfix">
+        <el-badge [model]="totalProduse" class="item">
+            <el-button [elDisabled]='items.length == 0' style="float: right;" type="primary" (click)="toPayment(total)">Plateste: {{total}} lei </el-button>
+        </el-badge>      
+        
+        </div>
+    </ng-template>
+    <div *ngIf="items.length == 0; else elseBlock">
+        Cosul este gol
+    </div>
+    <ng-template #elseBlock>
+      
+        <div el-row *ngFor="let item of items" style="margin-bottom: 10px;">
+            <div el-col span="12" style="padding-top:3px;">
+                <span >{{item.nume}}</span>
+            </div>
+            <div el-col span="12" >
+                <el-button size="mini" plain='true' type="danger" icon="delete" (click)="onDelete(item)"></el-button>
+            </div>
+        </div>
+            
+    </ng-template>
+        
+</el-card>

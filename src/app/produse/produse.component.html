@@ -1,0 +1,19 @@
+
+        <el-card class="box-card">
+            <ng-template #header>
+                <div class="clearfix">
+                <span style="line-height: 36px;">PRODUSE</span>
+                </div>
+            </ng-template>
+           
+            <ul class="lista">
+                <li *ngFor="let item of produse"                  
+                  (click)="onSelect(item)">                 
+                  <span class="badge">{{item.id}}</span> <span class="text">{{item.nume}} </span> <span class="text" style="float:right;">{{item.pret}} lei</span>
+                </li>
+              </ul>
+           
+        </el-card>
+    
+   
+

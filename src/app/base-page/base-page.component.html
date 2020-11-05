@@ -1,0 +1,14 @@
+
+
+<div el-row gutter="20">
+    <div el-col>
+      <h2 style="text-align: center; margin-bottom:50px;">{{title}}</h2>
+    </div>
+    
+    <div el-col span="6" offset="6">
+      <app-produse (open)="onSelect($event)"></app-produse> 
+    </div>
+    <div el-col span="6">
+      <app-cos-cumparaturi [items]="produseCos" [total]="total" [totalProduse]="totalProduse" (delete)="onDelete($event)"></app-cos-cumparaturi>
+    </div>
+  </div>
