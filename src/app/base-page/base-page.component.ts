@@ -22,36 +22,45 @@ export class BasePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // getProduseCos(){
-  //   let myObj       = new ProduseComponent();
-  //   this.produseCos = myObj.getProduse();
-  // }
-
-  onSelect(item){
-    this.totalArray = [];
+  onSelect(item){  
     this.produseCos = item;
     this.setTotalProduse();
     
   }
-  onDelete(items){    
-    this.totalArray = [];
-    this.produseCos = items
+  onDelete(item){       
+    this.produseCos = item
     this.setTotalProduse()
   }
 
   setTotalProduse(){
-    this.total        = 0;
-    this.totalProduse = 0;
+    this.setEmpty();
 
     if(this.produseCos.length > 0){
       this.produseCos.forEach(p => {
         this.totalArray.push(p.pret);
       })
       this.totalProduse = this.produseCos.length;
-      this.total        = this.totalArray.reduce((a, b) => a + b, 0)
-      this.totalFaraTva = this.total / 1.19;
-      this.valoareTva   = this.total - this.totalFaraTva;
+      this.total        = this.returnPrecise(this.arrReduce(this.totalArray));
+      this.totalFaraTva = this.returnPrecise(this.total / 1.19);
+      this.valoareTva   = this.returnPrecise(this.total - this.totalFaraTva);
     }   
+  }
+
+  setEmpty(){
+    this.total        = 0;
+    this.totalProduse = 0;
+    this.totalFaraTva = 0
+    this.valoareTva   = 0;
+    this.totalArray   = [];
+  }
+
+  returnPrecise(nr){
+    let temp = nr.toFixed(2);
+    return Number.parseFloat(temp);
+  }
+
+  arrReduce(arr){
+    return arr.reduce((a, b) => a + b, 0);
   }
 
 }

@@ -1,16 +1,23 @@
 
-
-<div el-row gutter="20">
-  <div el-col>
-    <h2 style="text-align: center; margin-bottom:50px;">{{title}}</h2>
-  </div>
-  
-  <div el-col span="6" offset="6">
-    <app-produse (open)="onSelect($event)"></app-produse> 
-  </div>
-  <div el-col span="6">
-    <app-cos-cumparaturi [items]="produseCos" [total]="total" [totalProduse]="totalProduse" [valoareTva]="valoareTva" [totalFaraTva]="totalFaraTva" (delete)="onDelete($event)"></app-cos-cumparaturi>
+<div el-row>
+  <div style="float:right; margin-top:10px; margin-right:10px" el-col span="5" >
+    <app-cos-cumparaturi 
+      [items]="produseCos" 
+      [total]="total" 
+      [totalProduse]="totalProduse" 
+      [valoareTva]="valoareTva" 
+      [totalFaraTva]="totalFaraTva" 
+      (delete)="onDelete($event)">
+    </app-cos-cumparaturi>
   </div>
 </div>
 
-<!-- <div>test</div> -->
+<div class="box">
+  <div el-row >        
+    <div el-col span="6" offset="9">
+      <app-produse (open)="onSelect($event)"></app-produse>       
+    </div>
+  </div>
+</div>
+
+

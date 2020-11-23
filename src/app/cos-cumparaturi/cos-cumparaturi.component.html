@@ -2,11 +2,18 @@
 <el-card class="box-card">
     <ng-template #header>
         <div class="clearfix">
-        <el-badge [model]="totalProduse" class="item">
-            <el-button [elDisabled]='items.length == 0' style="float: right;" type="primary" (click)="toPayment(total)">Plateste: {{total}} lei </el-button>
-        </el-badge>
-        Total fara TVA: {{totalFaraTva}} | Valoare TVA: {{valoareTva}}
-        
+            <div el-row >                
+                <div el-col span="12" style="padding-top:3px;">
+                    <el-badge [model]="totalProduse" class="item">
+                        <el-button [elDisabled]='items.length == 0' style="float: right;" type="primary" (click)="toPayment(total)">Plateste: {{total}} lei </el-button>
+                    </el-badge>
+                </div>   
+                <div *ngIf="total > 0" el-col span="12" >
+                    Total: {{total}} <br>
+                    Total fara TVA: {{totalFaraTva}} <br> 
+                    Valoare TVA: {{valoareTva}}
+                </div>             
+            </div>            
         </div>
     </ng-template>
     <div *ngIf="items.length == 0; else elseBlock">

@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProduseComponent implements OnInit {
 
   // produse = PRODUSE;
-  produse = [];
+  produse: {};
   selectedProduse = [];
 
   @Output()
@@ -32,9 +32,9 @@ export class ProduseComponent implements OnInit {
   }
 
   getListaProduse(){
-    this.http.post("http://angular-shopping-cart.menut.ro/api/index.php/test/get_produse",{})
+    this.http.post("http://angular-shopping-cart.menut.ro/api/index.php/test/get_produse",{test:"test"})
       .toPromise().then(data => {     
-        this.produse = data.Produse;
+        this.produse = data;
         
       })
   }

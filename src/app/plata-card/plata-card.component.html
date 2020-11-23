@@ -1,58 +1,52 @@
 
-<el-button type="success" (click)="toHome()">Home</el-button>
+<el-button style="margin-top: 10px; margin-left: 10px;" type="success" (click)="toHome()">Home</el-button>
 
+<div class="box">
     <div el-row gutter="20">
-        <div el-col span="6" offset="8">
-            <el-card class="box-card"></el-card>
-                <form (ngSubmit)="onSubmit()" >
-                    <div class="form-group">
-                        <label for="nume">Nume</label>
-                        <input type="text" class="form-control" id="nume"
-                            required
-                            [(ngModel)]="model.nume" name="nume"
-                            #nume="ngModel">                        
+        <div el-col span="6" offset="9">
+            <el-card class="box-card">
+                <ng-template #header>
+                    <div class="clearfix">
+                        <el-button type="success" (click)="generateSuccessCard()">Genereaza card valid</el-button>
+                        <el-button type="warning" style="float:right;" (click)="generateFailedCard()">Genereaza card gresit</el-button>
                     </div>
-                        <label for="numarCard">Numar card</label>
-                        <input type="text" class="form-control" id="numarCard"
-                            required
-                            [(ngModel)]="model.numarCard" name="numarCard"
-                            #numarCard="ngModel">
-                    
-        
-                    <div el-row gutter="15">
-                        <div el-col span="12">
-                            <label for="dataExpirare">Data expirare</label>
-                            <input type="text" class="form-control"                       
-                                [(ngModel)]="model.dataExpirare" name="dataExpirare"
-                                #dataExpirare="ngModel">                  
-                        </div>
-                
+                </ng-template>
+
+                <div el-row gutter="20">
+                    <el-form (ngSubmit)="onSubmit()">
+                        <div el-col span="24" >
+                            <el-form-item label="Nume">                            
+                                <el-input [(ngModel)]="model.nume" name="nume" #nume="ngModel"></el-input>                            
+                            </el-form-item>  
+                        </div>  
+                        <div el-col span="24" >
+                            <el-form-item label="Numar card" >
+                                <el-input [(ngModel)]="model.numarCard" name="numarCard" #numarCard="ngModel"></el-input>
+                            </el-form-item>
+                        </div>                                              
                         <div el-col span="12" >
-                            <label for="codSecuritate">Cod securitate</label>
-                            <input type="text"  id="codSecuritate"
-                                required
-                                [(ngModel)]="model.codSecuritate" name="codSecuritate"
-                                #codSecuritate="ngModel">                    
+                            <el-form-item label="Data expirare" >
+                                <el-input [(ngModel)]="model.dataExpirare" name="dataExpirare" #dataExpirare="ngModel"></el-input>
+                            </el-form-item>
                         </div>
-                    </div>
-                    
-                    <div el-row style="margin-top:20px">
-                        <div el-col span="24">
-                            
-                            <el-button (click)="reset()">Reset</el-button>
-                            <el-button (click)="reset()">Genereaza card valid</el-button>
-                            <el-button (click)="reset()">Genereaza card gresit</el-button>
-                            <el-button type="success" (click)="onSubmit()">Plateste {{suma}} lei </el-button>
-                            
-                        </div>
-                        <div el-col style="margin-top: 10px;">
-                            
-                        </div>
-                    </div>
-                </form>
+                        <div el-col span="12" >
+                            <el-form-item label="Cod securitate" >
+                                <el-input [(ngModel)]="model.codSecuritate" name="codSecuritate" #codSecuritate="ngModel"></el-input>
+                            </el-form-item>
+                        </div>                                                                                                                 
+                    </el-form>                    
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <el-button (click)="reset()">Reset</el-button>                            
+                    <el-button [elDisabled]="disabled" style="float:right;" type="primary" (click)="onSubmit()">Plateste {{suma}} lei </el-button>
+                </div>
+                 {{raspuns}}              
             </el-card>
         </div>
     </div>
+</div>
+    
 
 
     
